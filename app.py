@@ -1,3 +1,4 @@
+from django.shortcuts import redirect
 from flask import Flask, jsonify, render_template
 from requests import get
 from pymongo import MongoClient
@@ -15,9 +16,9 @@ def home():
 
 
 @ app.route('/visit/<int:id>', methods=["GET"])
-def mem1_comment(id):
+def comment(id):
     status = ""
-    data = list(db.visited.find({'id': id}, {'_id': False}))
+    data = list(db.visited.find({'member_id': id}, {'_id': False}))
     code = get(f"/visit/{id}").status_code
     # print(data)
     if code >= 500:
@@ -32,6 +33,10 @@ def mem1_comment(id):
         status = "1xx / informational response"
 
     return jsonify({'status': status, 'data': data})
+
+@ app.route('/home')
+def back():
+    return redirect("/")
 
 
 if __name__ == '__main__':
