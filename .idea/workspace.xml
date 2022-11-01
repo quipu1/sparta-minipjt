@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3adabc1-086a-4d81-90ff-7095190a3b59" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/static/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/member.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/test/member.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/member.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,16 +32,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/hp/Desktop/Sparta/미니프로젝트/static",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/hp/Desktop/Sparta/미니프로젝트/static&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\hp\Desktop\Sparta\미니프로젝트\static" />
@@ -64,6 +60,8 @@
       <updated>1667211675215</updated>
       <workItem from="1667211685208" duration="139000" />
       <workItem from="1667234615867" duration="3898000" />
+      <workItem from="1667238702113" duration="96000" />
+      <workItem from="1667263144097" duration="4027000" />
     </task>
     <servers />
   </component>
