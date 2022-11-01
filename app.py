@@ -1,14 +1,12 @@
-from urllib import response
 from flask import Flask, jsonify, render_template, redirect, request
 from requests import get
 from pymongo import MongoClient
 
 app = Flask(__name__)
-client = MongoClient('mongodb+srv://test:test@cluster0.lrizo6r.mongodb.net/?retryWrites=true&w=majority')
-# 보안 이슈
+client = MongoClient("키값은 따로 입력해주셔야 해요! 제 DB 쓰신다면 링크 슬랙에 넣어두겠습니다.")
+
 
 db = client.dblod
-
 
 @app.route("/")
 def home():
@@ -19,6 +17,10 @@ def home():
 def comment(member_id):
     status = ""
     data = list(db.visited.find({'member_id': int(member_id)}, {'_id': False}))
+    if data is not "":
+        status = "200 / successful"
+    else:
+        status = "error response"
 
     return jsonify({'status': status, 'data': data})
 
