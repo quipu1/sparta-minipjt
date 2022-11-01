@@ -1,5 +1,4 @@
-from django.shortcuts import redirect
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, redirect
 from requests import get
 from pymongo import MongoClient
 
