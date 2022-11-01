@@ -33,6 +33,18 @@ def comment(id):
 
     return jsonify({'status': status, 'data': data})
 
+@app.route("/visit/add/<int:member_id>", methods=["POST"])
+def visited_post(member_id):
+    visited_id_receive = request.form['visited_id_give']
+    visited_comment_receive = request.form['visited_comment_give']
+    doc = {
+        'id': visited_id_receive,
+        'comment': visited_comment_receive,
+        'member_id': member_id
+    }
+    db.visited.insert_one(doc)
+    return jsonify({'msg': '등록 완료!'})
+
 @ app.route('/home')
 def back():
     return redirect("/")
