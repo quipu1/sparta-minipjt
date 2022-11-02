@@ -3,14 +3,20 @@ from requests import get
 from pymongo import MongoClient
 
 app = Flask(__name__)
-client = MongoClient('')
-
+client = MongoClient('mongodb+srv://test:test@cluster0.lrizo6r.mongodb.net/?retryWrites=true&w=majority')
 
 db = client.dblod
 
+
 @app.route("/")
 def home():
-    return render_template('member.html')
+    return render_template('index.html')
+
+
+@app.route("/<member_id>", methods=["GET"])
+def info_get(member_id):
+    members_list = list(db.members.find_one({'member_id': member_id}, {'_id': False}))
+    return jsonify({'members': members_list})
 
 
 @app.route("/visit/<member_id>", methods=["GET"])
