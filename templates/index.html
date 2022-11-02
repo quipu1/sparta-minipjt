@@ -14,17 +14,25 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
     <title>League of Developer</title>
+<!--    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Nanum+Brush+Script&family=Yeon+Sung&display=swap" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Noto+Serif+KR&display=swap" rel="stylesheet">
     <style>
+        /** {*/
+        /*    font-family: 'Gaegu', cursive;*/
+        /*    font-family: 'Nanum Brush Script', cursive;*/
+        /*    font-family: 'Yeon Sung', cursive;*/
+        /*}*/
+
         * {
             font-family: 'Gowun Batang', serif;
         }
         .mypic {
             width: 100%;
             height: 250px;
-            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-            background-position: center 30%;
-            background-size: cover;
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/logo.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover, 40%;
             color: white;
             display: flex;
             flex-direction: column;
@@ -32,7 +40,12 @@
             justify-content: center;
         }
         .team {
-            width: 95%;
+            /*background-image: url("https://cdn.pixabay.com/photo/2017/09/20/12/49/pin-board-2768419__480.jpg");*/
+            background-repeat: no-repeat;
+
+            /*background-color: burlywood;*/
+            /*border-radius: 20px;*/
+            width: 130%;
             max-width: 1300px;
             margin: 20px auto 20px auto;
             padding: 20px;
@@ -48,10 +61,37 @@
             margin: 20px auto 20px 10px;
             padding-right: 40px;
         }
+        .one {
+            background-color: #dcdcdc;
+            width : 650px;
+            height : 150px;
+            border-radius: 20px;
+            margin: auto;
+            padding: 15px 15px 30px 15px;
+            line-height: 180%;
+        }
         .tcontent > h4 {
             text-decoration: underline;
             text-underline-position: under;
             font-weight: bold;
+        }
+        .two {
+            background-color: #dcdcdc;
+            width : 650px;
+            height : 150px;
+            border-radius: 20px;
+            margin: auto;
+            padding: 25px;
+            line-height: 220%;
+        }
+        .three {
+            background-color: #dcdcdc;
+            width : 650px;
+            height : 150px;
+            border-radius: 20px;
+            margin: auto;
+            padding: 20px;
+            line-height: 100%;
         }
         .team > img {
             width: 50%;
@@ -88,9 +128,22 @@
         .hidden {
             display: none;
         }
+        p{
+            font-weight: bold;
+        }
+        li{
+            font-weight: bold;
+        }
+        h5{
+            font-weight: bold;
+        }
+        a{
+            text-decoration-line: none;
+            color: black;
+            font-weight: bold;
+        }
     </style>
 </head>
-<body>
 <body>
 <div class="mypic">
     <h1>개발자의 협곡에 오신 것을 환영합니다.</h1>
@@ -98,56 +151,73 @@
 <div class="team">
     <div class="tcontent">
         <h4>League of Developer</h4>
-        <p>팀 소개 내용 어쩌고 저쩌공.ㅇ.ㅇ.아니ㅏ나나ㅣㄴ니ㅏㅇ나ㅣㅇ낭나ㅣㅓㄴddddddddddddddddddddddddddddddddddddㅇ라ㅣㄴ</p>
+        <br>
+        <div class = "one">
+            <p>내배캠스프링  B-1조 League of Developer 팀입니다.</p> <p>게임을 좋아하는 각각의 팀원이 모여 이제 게임보다는 코딩에 집중하자는 목표로 </p> <p> 지은 팀명입니다. 다들 잔잔하지만 맡은 일에 최선을 다 합니다.</p>
+        </div>
         <br>
         <h4>LOD의 목표</h4>
-        <p>ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</p>
+        <br>
+        <div class = "two">
+        <li>게임보다는 코딩에 집중하자!</li>
+        <li>낙오하지 말자!</li>
+        <li>어엿한 개발자가 되자!</li>
+        </div>
         <br>
         <h4>LOD의 약속</h4>
-        <p>1.ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</p>
-        <p>2.ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</p>
-        <p>3.ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</p>
+        <br>
+        <div class = "three">
+        <p>1. 지각, 무단결석 하지 않기</p>
+        <p>2. 9시, 14시, 17시 스크럼 진행 (생존신고, 질문 및 진행상황 공유…)</p>
+        <p>3. 서로 짜증내지 않고, 배려하고 존중하기</p>
+        <p>4. 판교에서 만나자!</p>
+        </div>
+
     </div>
     <img src="/static/team.png">
 </div>
 <div class="members">
     <div class="row row-cols-1 row-cols-md-5 g-4">
         <div class="col">
-            <h5>팀장 - ooo</h5>
+            <h5>팀장 - 김영민</h5>
             <div class="card rollover">
                 <img src="/static/member.jpg" class="card-img-top card__img" alt="...">
-                <a class="card__link hidden" href="#">더 알아보기</a>
+                <a class="card__link hidden" href="#">저를 소개합니다!</a>
             </div>
         </div>
         <div class="col">
-            <h5>팀원 - ooo</h5>
+            <h5>팀원 - 김석진</h5>
             <div class="card rollover">
                 <img src="/static/member.jpg" class="card-img-top card__img" alt="...">
-                <a class="card__link hidden" href="#">더 알아보기</a>
+                <a class="card__link hidden" href="#">저를 소개합니다!</a>
             </div>
         </div>
         <div class="col">
-            <h5>팀원 - ooo</h5>
+            <h5>팀원 - 성루비</h5>
             <div class="card rollover">
                 <img src="/static/member.jpg" class="card-img-top card__img" alt="...">
-                <a class="card__link hidden" href="#">더 알아보기</a>
+                <a class="card__link hidden" href="#">저를 소개합니다!</a>
             </div>
         </div>
         <div class="col">
-            <h5>팀원 - ooo</h5>
+            <h5>팀원 - 이승윤</h5>
             <div class="card rollover">
                 <img src="/static/member.jpg" class="card-img-top card__img" alt="...">
-                <a class="card__link hidden" href="#">더 알아보기</a>
+                <a class="card__link hidden" href="#">저를 소개합니다!</a>
             </div>
         </div>
         <div class="col">
-            <h5>팀원 - ooo</h5>
+            <h5>팀원 - 최승호</h5>
             <div class="card">
                 <img src="/static/member.jpg" class="card-img-top card__img" alt="...">
-                <a class="card__link hidden" href="#">더 알아보기</a>
+                <a class="card__link hidden" href="#">저를 소개합니다!</a>
             </div>
         </div>
     </div>
+</div>
+<div class = "test"  >
+
+    {member_id}
 </div>
 <script>
     const roll = document.querySelectorAll('.card__img');
@@ -161,6 +231,16 @@
             links[i].classList.add("hidden");
         })
     })
+
+    roll.forEach((el, i) => {
+        el.addEventListener('click', e => {
+            window.localStorage.setItem('member_id',i);
+            // console.log(i)
+
+        })
+    })
+    const member_id = window.localStorage.getItem('member_id');
+
 </script>
 </body>
 </html>
