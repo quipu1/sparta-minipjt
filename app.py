@@ -13,6 +13,11 @@ def home():
     return render_template('index.html')
 
 
+@app.route("/<member_id>")
+def member():
+    return render_template('member.html')
+
+
 @app.route("/<member_id>", methods=["GET"])
 def info_get(member_id):
     members_list = list(db.members.find_one({'member_id': member_id}, {'_id': False}))
