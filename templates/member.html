@@ -130,6 +130,16 @@
         height: 400px;
         width: 100%;
       }
+
+      .alink {
+          text-decoration:none;
+          color: darksalmon;
+      }
+
+      .alink:hover {
+          text-decoration:none;
+          color: coral;
+      }
     </style>
     <script>
         // 저장소에 있는 멤버 아이디 가져오기
@@ -181,7 +191,7 @@
                                       </li>
                                       <li>
                                           <h6>블로그</h6>
-                                          <p>${blog}</p>
+                                          <a class="alink" href="${blog}">${blog}</a>
                                       </li>
                                   </ul>`;
               $(".member__contents").append(temp);
