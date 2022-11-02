@@ -13,14 +13,14 @@ def home():
     return render_template('index.html')
 
 
-@app.route("/<member_id>")
+@app.route("/member/<member_id>")
 def member(member_id):
     return render_template('member.html', member_id=member_id)
 
 
 @app.route("/<member_id>", methods=["GET"])
 def info_get(member_id):
-    members_list = list(db.members.find_one({'member_id': member_id}, {'_id': False}))
+    members_list = list(db.members.find({'member_id': int(member_id)}, {'_id': False}))
     return jsonify({'members': members_list})
 
 

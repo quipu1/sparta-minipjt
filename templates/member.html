@@ -107,116 +107,126 @@
       }
     </style>
     <script>
-      // 저장소에 있는 멤버 아이디 가져오기
-      const member_id = 0;
-      // const member_id = window.localStorage.getItem('member_id');
+        // 저장소에 있는 멤버 아이디 가져오기
+        const member_id = parseInt({{member_id|tojson}});
 
-      // member.html이 보여질 때 바로 필요한 함수
-      $(document).ready(function () {
-        show_member();
-        show_comment();
-      });
+        // const member_id = window.localStorage.getItem('member_id');
 
-      // db의 해당 멤버 데이터 보여주기
-      function show_member() {
-        ".member__contents".empty();
-
-        $.ajax({
-          type: "GET",
-          url: `/{member_id}`,
-          data: {},
-          success: function (response) {
-            test = response["data"];
-            console.log(test);
-            const name = test["name"];
-            const mbti = test["mbti"];
-            const desc = test["desc"];
-            const stpoint = test["stpoint"];
-            const style = test["style"];
-            const blog = test["blog"];
-
-            let temp = ` <ul>
-                                    <li>
-                                        <h4>${name}</h4>
-                                        <p>${desc}</p>
-                                    </li>
-                                    <li>
-                                        <h6>mbti</h6>
-                                        <p>${mbti}</p>
-                                    </li>
-                                    <li>
-                                        <h6>장점</h6>
-                                        <p>${stpoint}</p>
-                                    </li>
-                                    <li>
-                                        <h6>업무 스타일</h6>
-                                        <p>${style}</p>
-                                    </li>
-                                    <li>
-                                        <h6>블로그</h6>
-                                        <p>${blog}</p>
-                                    </li>
-                                </ul>`;
-            $(".member__contents").append(temp);
-          },
+        // member.html이 보여질 때 바로 필요한 함수
+        $(document).ready(function () {
+          show_member();
+          show_comment();
         });
-      }
 
-      // db의 comment 데이터 보여주기
-      function show_comment() {
-        $.ajax({
-          type: "GET",
-          url: `/visit/${member_id}`,
-          data: {},
-          success: function (response) {
-            console.log(response);
-            let rows = response["data"];
-            for (let i = 0; i < rows.length; i++) {
-              let id = rows[i]["id"];
-              let comment = rows[i]["comment"];
+        // db의 해당 멤버 데이터 보여주기
+        function show_member() {
+          $(".member__contents").empty();
 
-              let temp_html = `<div class="card">
-    <div class="card-header">
-        ${id}
-    </div>
-    <div class="card-body">
-        <blockquote class="blockquote mb-0">
-            <p>${comment}</p>
-        </blockquote>
-    </div>`;
-              $(`#visit-list`).append(temp_html);
+          $.ajax({
+            type: "GET",
+            url: `/${member_id}`,
+            data: {},
+            success: function (response) {
+              test = response["members"];
+              console.log("member: ",test);
+              const name = test[0]["name"];
+              const mbti = test[0]["mbti"];
+              const desc = test[0]["desc"];
+              const stpoint = test[0]["stpoint"];
+              const style = test[0]["style"];
+              const blog = test[0]["blog"];
+
+              let temp = ` <ul>
+                                      <li>
+                                          <h4>${name}</h4>
+                                          <p>${desc}</p>
+                                      </li>
+                                      <li>
+                                          <h6>mbti</h6>
+                                          <p>${mbti}</p>
+                                      </li>
+                                      <li>
+                                          <h6>장점</h6>
+                                          <p>${stpoint}</p>
+                                      </li>
+                                      <li>
+                                          <h6>업무 스타일</h6>
+                                          <p>${style}</p>
+                                      </li>
+                                      <li>
+                                          <h6>블로그</h6>
+                                          <p>${blog}</p>
+                                      </li>
+                                  </ul>`;
+              $(".member__contents").append(temp);
+            },
+          });
+        }
+
+        // db의 comment 데이터 보여주기
+        function show_comment() {
+          $.ajax({
+            type: "GET",
+            url: `/visit/${member_id}`,
+            data: {},
+            success: function (response) {
+              console.log(response);
+              let rows = response["data"];
+              for (let i = 0; i < rows.length; i++) {
+                let id = rows[i]["id"];
+                let comment = rows[i]["comment"];
+
+                let temp_html = `<div class="card">
+      <div class="card-header">
+          ${id}
+      </div>
+      <div class="card-body">
+          <blockquote class="blockquote mb-0">
+              <p>${comment}</p>
+          </blockquote>
+      </div>`;
+                $(`#visit-list`).append(temp_html);
+              }
+            },
+          });
+        }
+
+        // comment 저장
+        function save_comment() {
+          let id = $(`#id`).val();
+          let comment = $(`#comment`).val();
+
+          $.ajax({
+            type: "POST",
+            url: `/visit/add/${member_id}`,
+            data: {
+              visited_id_give: id,
+              visited_comment_give: comment,
+              member_id: member_id,
+            },
+            success: function (response) {
+              // console.log(response)
+              window.location.reload();
+            },
+          });
+        }
+
+        // 뒤로가기
+        function back() {
+          $.ajax({
+            type:"GET",
+            url: "/",
+            data:{},
+            success:function(response) {
+              console.log(response);
             }
-          },
-        });
-      }
-
-      // comment 저장
-      function save_comment() {
-        let id = $(`#id`).val();
-        let comment = $(`#comment`).val();
-
-        $.ajax({
-          type: "POST",
-          url: `/visit/add/${member_id}`,
-          data: {
-            visited_id_give: id,
-            visited_comment_give: comment,
-            member_id: member_id,
-          },
-          success: function (response) {
-            // console.log(response)
-            window.location.reload();
-          },
-        });
-      }
-
-      // 뒤로가기
-      function back() {}
+          })
+        }
     </script>
   </head>
   <body>
     <div class="back">
-      <img class="backbtn" src="../static/back.png" />
+      <a href="/home"><img class="backbtn" src="../static/back.png" /></a>
     </div>
     <div class="member">
       <div class="member__contents">
