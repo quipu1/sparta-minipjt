@@ -27,7 +27,7 @@ def info_get(member_id):
 @app.route("/visit/<member_id>", methods=["GET"])
 def comment(member_id):
     status = ""
-    data = list(db.visited.find({'member_id': member_id}, {'_id': False}))
+    data = list(db.visited.find({'member_id': int(member_id)}, {'_id': False}))
     if data != "":
         status = "200 / successful"
     else:
