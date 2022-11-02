@@ -125,6 +125,11 @@
         margin-top: 10px;
         margin-bottom: 10px;
       }
+
+      .member img {
+        height: 400px;
+        width: 100%;
+      }
     </style>
     <script>
         // 저장소에 있는 멤버 아이디 가져오기
@@ -147,16 +152,16 @@
             url: `/${member_id}`,
             data: {},
             success: function (response) {
-              test = response["members"];
+              member_data = response["members"];
 
-              // console.log("member: ",test);
-              const name = test[0]["name"];
-              const mbti = test[0]["mbti"];
-              const desc = test[0]["desc"];
-              const stpoint = test[0]["stpoint"];
-              const style = test[0]["style"];
-              const blog = test[0]["blog"];
-
+              // console.log("member: ",member_data);
+              const name = member_data[0]["name"];
+              const mbti = member_data[0]["mbti"];
+              const desc = member_data[0]["desc"];
+              const stpoint = member_data[0]["stpoint"];
+              const style = member_data[0]["style"];
+              const blog = member_data[0]["blog"];
+              const img = member_data[0]["img"];
               let temp = ` <ul>
                                       <li>
                                           <h4>${name}</h4>
@@ -180,6 +185,7 @@
                                       </li>
                                   </ul>`;
               $(".member__contents").append(temp);
+              $(".member img").attr("src",img);
             },
           });
         }
