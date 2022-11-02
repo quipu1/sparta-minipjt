@@ -98,8 +98,49 @@
             margin-bottom: 10px;
         }
     </style>
+    <script>
+         // 저장소에 있는 멤버 아이디 가져오기
+         const member_id = window.localStorage.getItem('member_id');
+
+        // member.html이 보여질 때 바로 필요한 함수
+        $(document).ready(function () {
+            set_temp()
+            show_member()
+            show_comment()
+        });
+
+        // db의 해당 멤버 데이터 보여주기
+        function show_member() {
+
+        }
+
+        // db의 comment 데이터 보여주기
+        function show_comment() {
+            $.ajax({
+                type: "GET",
+                url: `/visit/${member_id}`,
+                data: {},
+                success: function (response) {
+                    console.log(response)
+                    }
+                }
+            });
+        }
+
+        // comment 저장
+        function save_comment() {
+
+        }
+
+        // 뒤로가기
+        function back() {
+
+        }
+
+
+
+    </script>
 </head>
-<body>
 <body>
 <div class="back">
     <img class="backbtn" src="/static/back.png">
