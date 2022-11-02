@@ -132,13 +132,13 @@
       }
 
       .alink {
-          text-decoration:none;
-          color: darksalmon;
+        text-decoration: none;
+        color: darksalmon;
       }
 
       .alink:hover {
-          text-decoration:none;
-          color: coral;
+        text-decoration: none;
+        color: coral;
       }
     </style>
     <script>
@@ -213,10 +213,11 @@
               for (let i = 0; i < rows.length; i++) {
                 let id = rows[i]["id"];
                 let comment = rows[i]["comment"];
+                let comment_id = rows[i]["comment_id"];
 
                 let temp_html = `<div class="card">
                                   <div class="card-header">
-                                      ${id}<button onclick="del_comment(date())" type="button" class="btn btn-dark" >
+                                      ${id}<button onclick="del_comment(${comment_id})" type="button" class="btn btn-dark" >
                                             삭제하기
                                           </button>
                                   </div>
@@ -260,7 +261,6 @@
             'comment_id' : comment_id
           },
           success: function (response) {
-            // console.log(response)
             window.location.reload();
           },
         });
@@ -285,7 +285,7 @@
       <h1>개발자의 협곡에 오신 것을 환영합니다.</h1>
     </div>
     <div class="back">
-      <a href="/home"><img class="backbtn" src="../static/back.png" /></a>
+      <a href="/"><img class="backbtn" src="../static/back.png" /></a>
     </div>
     <div class="member">
       <div class="member__contents">

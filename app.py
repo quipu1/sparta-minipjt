@@ -52,11 +52,10 @@ def visited_post(member_id):
     return jsonify({'msg': '등록 완료!'})
 
 
-@app.route('/visit/del/<comment_id>', methods=["DELETE"])
+@app.route('/visit/del', methods=["POST"])
 def visited_del():
     visited_comment_id_receive = request.form['comment_id']
-    db.visited.delete_one({'comment_id': int(visited_comment_id_receive)})
-    print(visited_comment_id_receive)
+    db.visited.delete_one({'comment_id': visited_comment_id_receive})
     return jsonify({'msg': '삭제 완료!'})
 
 
