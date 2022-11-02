@@ -14,9 +14,8 @@ def home():
 
 
 @app.route("/<member_id>")
-def member():
-    return render_template('member.html')
-
+def member(member_id):
+    return render_template('member.html', member_id=member_id)
 
 
 @app.route("/<member_id>", methods=["GET"])
