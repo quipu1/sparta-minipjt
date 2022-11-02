@@ -215,14 +215,16 @@
                 let comment = rows[i]["comment"];
 
                 let temp_html = `<div class="card">
-      <div class="card-header">
-          ${id}
-      </div>
-      <div class="card-body">
-          <blockquote class="blockquote mb-0">
-              <p>${comment}</p>
-          </blockquote>
-      </div>`;
+                                  <div class="card-header">
+                                      ${id}<button onclick="del_comment(date())" type="button" class="btn btn-dark" >
+                                            삭제하기
+                                          </button>
+                                  </div>
+                                  <div class="card-body">
+                                      <blockquote class="blockquote mb-0">
+                                          <p>${comment}</p>
+                                      </blockquote>
+                                  </div>`;
                 $(`#visit-list`).append(temp_html);
               }
             },
@@ -230,24 +232,40 @@
         }
 
         // comment 저장
-        function save_comment() {
-          let id = $(`#id`).val();
-          let comment = $(`#comment`).val();
+      function save_comment() {
+        let id = $(`#id`).val();
+        let comment = $(`#comment`).val();
 
-          $.ajax({
-            type: "POST",
-            url: `/visit/add/${member_id}`,
-            data: {
-              visited_id_give: id,
-              visited_comment_give: comment,
-              member_id: member_id,
-            },
-            success: function (response) {
-              // console.log(response)
-              window.location.reload();
-            },
-          });
-        }
+        $.ajax({
+          type: "POST",
+          url: `/visit/add/${member_id}`,
+          data: {
+            visited_id_give: id,
+            visited_comment_give: comment,
+            member_id: member_id,
+            comment_id: Date.now()
+          },
+          success: function (response) {
+            // console.log(response)
+            window.location.reload();
+          },
+        });
+      }
+
+      function del_comment(comment_id) {
+       $.ajax({
+          type: "POST",
+          url: `/visit/del`,
+          data: {
+            'comment_id' : comment_id
+          },
+          success: function (response) {
+            // console.log(response)
+            window.location.reload();
+          },
+        });
+      }
+
 
         // 뒤로가기
         function back() {

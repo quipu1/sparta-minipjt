@@ -41,18 +41,26 @@ def comment(member_id):
 def visited_post(member_id):
     visited_id_receive = request.form['visited_id_give']
     visited_comment_receive = request.form['visited_comment_give']
+    visited_comment_id_receive = request.form['comment_id']
     doc = {
         'id': visited_id_receive,
         'comment': visited_comment_receive,
-        'member_id': int(member_id)
+        'member_id': int(member_id),
+        'comment_id': visited_comment_id_receive
     }
     db.visited.insert_one(doc)
     return jsonify({'msg': '등록 완료!'})
 
 
-@app.route('/home')
-def back():
-    return redirect("/")
+@app.route('/visit/del/<comment_id>', methods=["DELETE"])
+def visited_del():
+    visited_comment_id_receive = request.form['comment_id']
+    db.visited.delete_one({'comment_id': int(visited_comment_id_receive)})
+    print(visited_comment_id_receive)
+    return jsonify({'msg': '삭제 완료!'})
+
+
+
 
 
 if __name__ == '__main__':
