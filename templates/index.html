@@ -81,6 +81,7 @@
         height: 150px;
         border-radius: 20px;
         margin: auto;
+          margin-left: 0;
         padding: 15px 15px 30px 15px;
         line-height: 180%;
       }
@@ -95,6 +96,7 @@
         height: 150px;
         border-radius: 20px;
         margin: auto;
+          margin-left: 0;
         padding: 25px;
         line-height: 220%;
       }
@@ -104,6 +106,7 @@
         height: 150px;
         border-radius: 20px;
         margin: auto;
+          margin-left: 0;
         padding: 20px;
         line-height: 100%;
       }
@@ -113,26 +116,34 @@
         margin: 20px auto 20px auto;
         padding-left: 20px;
       }
+      .member
       .card__img {
+          display: inline-block;
         position: relative;
+          width: 60%;
+      }
+      .card__img > img {
+          width: 100%;
       }
       .card__img:hover {
         opacity: 0.5;
       }
       .card__link {
-        position: absolute;
-        left: 60px;
-        top: 50px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
       }
+
       .members {
-        width: 95%;
-        max-width: 1300px;
-        margin: 20px auto 20px auto;
-        padding: 20px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
+          width: 95%;
+          max-width: 1300px;
+          margin: 20px auto 20px auto;
+          padding: 20px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
       }
       .col > h5 {
         padding-left: 5px;
@@ -217,66 +228,45 @@
         <div class="col">
           <h5>팀장 - 김영민</h5>
           <div class="card rollover">
-            <a href="/member/5">
-              <img
-                src="/static/member.jpg"
-                class="card-img-top card__img"
-                alt="..."
-              />
-            </a>
+            <a class="card__img" href="/member/0"><img src="/static/member.jpg" alt="..."/></a>
+            <a class="card__link hidden" style="margin: auto">저를 소개합니다!</a>
+          </div>
+        </div>
+          <div class="col">
+          <h5>팀원 - 김석진</h5>
+          <div class="card rollover">
+            <a class="card__img" href="/member/0"><img src="/static/member.jpg" alt="..."/></a>
             <a class="card__link hidden">저를 소개합니다!</a>
           </div>
         </div>
-        <div class="col">
-          <h5>팀원 - 김석진</h5>
-          <div class="card rollover">
-            <img
-              src="/static/member.jpg"
-              class="card-img-top card__img"
-              alt="..."
-            />
-            <a class="card__link hidden" href="/member/2">저를 소개합니다!</a>
-          </div>
-        </div>
-        <div class="col">
+          <div class="col">
           <h5>팀원 - 성루비</h5>
           <div class="card rollover">
-            <img
-              src="/static/member.jpg"
-              class="card-img-top card__img"
-              alt="..."
-            />
-            <a class="card__link hidden" href="/member/1">저를 소개합니다!</a>
+            <a class="card__img" href="/member/0"><img src="/static/member.jpg" alt="..."/></a>
+            <a class="card__link hidden">저를 소개합니다!</a>
           </div>
         </div>
-        <div class="col">
+          <div class="col">
           <h5>팀원 - 이승윤</h5>
           <div class="card rollover">
-            <img
-              src="/static/member.jpg"
-              class="card-img-top card__img"
-              alt="..."
-            />
-            <a class="card__link hidden" href="/member/4">저를 소개합니다!</a>
+            <a class="card__img" href="/member/0"><img src="/static/member.jpg" alt="..."/></a>
+            <a class="card__link hidden">저를 소개합니다!</a>
           </div>
         </div>
-        <div class="col">
+          <div class="col">
           <h5>팀원 - 최승호</h5>
-          <div class="card">
-            <img
-              src="/static/member.jpg"
-              class="card-img-top card__img"
-              alt="..."
-            />
-            <a class="card__link hidden" href="/member/3">저를 소개합니다!</a>
+          <div class="card rollover">
+            <a class="card__img" href="/member/0"><img src="/static/member.jpg" alt="..."/></a>
+            <a class="card__link hidden">저를 소개합니다!</a>
           </div>
+        </div>
         </div>
       </div>
     </div>
     <div class="test">{member_id}</div>
     <script>
       const roll = document.querySelectorAll(".card__img");
-      const links = document.querySelectorAll(".card > a");
+      const links = document.querySelectorAll(".card__link");
 
       roll.forEach((el, i) => {
         el.addEventListener("mouseover", (e) => {
@@ -290,7 +280,6 @@
       roll.forEach((el, i) => {
         el.addEventListener("click", (e) => {
           window.localStorage.setItem("member_id", i);
-          // console.log(i)
         });
       });
       const member_id = window.localStorage.getItem("member_id");
