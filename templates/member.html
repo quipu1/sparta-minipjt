@@ -1,133 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta property="og:title" content="League of Developer"/>
-    <meta property="og:description" content="LOD팀을 소개합니다!"/>
-    <meta property="og:image" content=""/>
+    <meta property="og:title" content="League of Developer" />
+    <meta property="og:description" content="LOD팀을 소개합니다!" />
+    <meta property="og:image" content="" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
 
     <title>League of Developer</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Noto+Serif+KR&display=swap"
-          rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Noto+Serif+KR&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            font-family: 'Gowun Batang', serif;
-        }
+      * {
+        font-family: "Gowun Batang", serif;
+      }
 
-        .back {
-            padding: 30px 0px 0px 30px;
-        }
+      .back {
+        padding: 30px 0px 0px 30px;
+      }
 
-        .back > img {
-            width: 5%;
-            max-width: 40px;
-        }
+      .back > img {
+        width: 5%;
+        max-width: 40px;
+      }
 
-        .member {
-            width: 95%;
-            max-width: 1300px;
-            margin: 20px auto 20px auto;
-            padding: 20px;
+      .member {
+        width: 95%;
+        max-width: 1300px;
+        margin: 20px auto 20px auto;
+        padding: 20px;
 
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-        }
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
 
-        .mcontent {
-            /*background-color: aliceblue;*/
-            width: 95%;
-            max-width: 800px;
+      .member__contents {
+        /*background-color: aliceblue;*/
+        width: 95%;
+        max-width: 800px;
 
-            margin: 20px auto 20px 10px;
-            padding-right: 40px;
+        margin: 20px auto 20px 10px;
+        padding-right: 40px;
+      }
 
-        }
+      .member__contents > h4,
+      h6 {
+        text-decoration: underline;
+        text-underline-position: under;
 
-        .mcontent > h4, h6 {
-            text-decoration: underline;
-            text-underline-position: under;
+        font-weight: bold;
+      }
 
-            font-weight: bold;
-        }
+      .member > img {
+        width: 50%;
+        max-width: 500px;
+        margin: 20px auto 20px auto;
+        padding-left: 20px;
+      }
 
-        .member > img {
-            width: 50%;
-            max-width: 500px;
-            margin: 20px auto 20px auto;
-            padding-left: 20px;
-        }
+      .vpost {
+        width: 95%;
+        max-width: 1100px;
+        margin: 20px auto 20px auto;
 
-        .vpost {
-            width: 95%;
-            max-width: 1100px;
-            margin: 20px auto 20px auto;
+        box-shadow: 0px 0px 3px 0px black;
+        padding: 20px;
 
-            box-shadow: 0px 0px 3px 0px black;
-            padding: 20px;
+        justify-content: center;
+      }
 
-            justify-content: center;
-        }
+      .btn-text {
+        margin-top: 15px;
+        align-items: center;
+        text-align: center;
+      }
 
-        .btn-text {
-            margin-top: 15px;
-            align-items: center;
-            text-align: center;
-        }
+      .vcards {
+        width: 95%;
+        max-width: 1100px;
+        margin: auto;
+      }
 
-        .vcards {
-            width: 95%;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .vcards > .card {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
+      .vcards > .card {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
     </style>
     <script>
-         // 저장소에 있는 멤버 아이디 가져오기
-         const member_id = 0
-         // const member_id = window.localStorage.getItem('member_id');
+      // 저장소에 있는 멤버 아이디 가져오기
+      const member_id = 0;
+      // const member_id = window.localStorage.getItem('member_id');
 
-        // member.html이 보여질 때 바로 필요한 함수
-        $(document).ready(function () {
-            show_member()
-            show_comment()
+      // member.html이 보여질 때 바로 필요한 함수
+      $(document).ready(function () {
+        show_member();
+        show_comment();
+      });
+
+      // db의 해당 멤버 데이터 보여주기
+      function show_member() {
+        ".member__contents".empty();
+
+        $.ajax({
+          type: "GET",
+          url: `/{member_id}`,
+          data: {},
+          success: function (response) {
+            test = response["data"];
+            console.log(test);
+            const name = test["name"];
+            const mbti = test["mbti"];
+            const desc = test["desc"];
+            const stpoint = test["stpoint"];
+            const style = test["style"];
+            const blog = test["blog"];
+
+            let temp = ` <ul>
+                                    <li>
+                                        <h4>${name}</h4>
+                                        <p>${desc}</p>
+                                    </li>
+                                    <li>
+                                        <h6>mbti</h6>
+                                        <p>${mbti}</p>
+                                    </li>
+                                    <li>
+                                        <h6>장점</h6>
+                                        <p>${stpoint}</p>
+                                    </li>
+                                    <li>
+                                        <h6>업무 스타일</h6>
+                                        <p>${style}</p>
+                                    </li>
+                                    <li>
+                                        <h6>블로그</h6>
+                                        <p>${blog}</p>
+                                    </li>
+                                </ul>`;
+            $(".member__contents").append(temp);
+          },
         });
+      }
 
-        // db의 해당 멤버 데이터 보여주기
-        function show_member() {
+      // db의 comment 데이터 보여주기
+      function show_comment() {
+        $.ajax({
+          type: "GET",
+          url: `/visit/${member_id}`,
+          data: {},
+          success: function (response) {
+            console.log(response);
+            let rows = response["data"];
+            for (let i = 0; i < rows.length; i++) {
+              let id = rows[i]["id"];
+              let comment = rows[i]["comment"];
 
-        }
-
-        // db의 comment 데이터 보여주기
-        function show_comment() {
-            $.ajax({
-                type: "GET",
-                url: `/visit/${member_id}`,
-                data: {},
-                success: function (response) {
-                    console.log(response)
-                    let rows = response['data']
-                    for (let i = 0; i < rows.length; i++) {
-                        let id = rows[i]['id']
-                        let comment = rows[i]['comment']
-
-                        let temp_html = `<div class="card">
+              let temp_html = `<div class="card">
     <div class="card-header">
         ${id}
     </div>
@@ -135,78 +183,88 @@
         <blockquote class="blockquote mb-0">
             <p>${comment}</p>
         </blockquote>
-    </div>`
-                        $(`#visit-list`).append(temp_html)
-                    }
-                    }
-            });
-        }
+    </div>`;
+              $(`#visit-list`).append(temp_html);
+            }
+          },
+        });
+      }
 
-        // comment 저장
-        function save_comment() {
-            let id = $(`#id`).val()
-            let comment = $(`#comment`).val()
+      // comment 저장
+      function save_comment() {
+        let id = $(`#id`).val();
+        let comment = $(`#comment`).val();
 
-            $.ajax({
-                type: "POST",
-                url: `/visit/add/${member_id}`,
-                data: {'visited_id_give': id, 'visited_comment_give': comment, 'member_id': member_id},
-                success: function (response) {
-                    // console.log(response)
-                    window.location.reload()
-                    }
-            });
-        }
+        $.ajax({
+          type: "POST",
+          url: `/visit/add/${member_id}`,
+          data: {
+            visited_id_give: id,
+            visited_comment_give: comment,
+            member_id: member_id,
+          },
+          success: function (response) {
+            // console.log(response)
+            window.location.reload();
+          },
+        });
+      }
 
-        // 뒤로가기
-        function back() {
-
-        }
-
-
-
+      // 뒤로가기
+      function back() {}
     </script>
-</head>
-<body>
-<div class="back">
-    <img class="backbtn" src="/static/back.png">
-</div>
-<div class="member">
-    <div class="mcontent">
-        <h4>이름값</h4>
-        <p>desc값</p>
-        <br>
-        <h6>mbti</h6>
-        <p>mbti값</p>
-        <br>
-        <h6>장점</h6>
-        <p>stpoint값</p>
-        <br>
-        <h6>업무 스타일</h6>
-        <p>style값 </p>
-        <br>
-        <h6>블로그</h6>
-        <p>blog값</p>
+  </head>
+  <body>
+    <div class="back">
+      <img class="backbtn" src="../static/back.png" />
     </div>
-    <img src="/static/team.png">
-</div>
-<div class="vpost">
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="id" placeholder="url">
+    <div class="member">
+      <div class="member__contents">
+        <ul>
+          <li>
+            <h4>이름값</h4>
+            <p>desc값</p>
+          </li>
+          <li>
+            <h6>mbti</h6>
+            <p>mbti값</p>
+          </li>
+          <li>
+            <h6>장점</h6>
+            <p>stpoint값</p>
+          </li>
+          <li>
+            <h6>업무 스타일</h6>
+            <p>style값</p>
+          </li>
+          <li>
+            <h6>블로그</h6>
+            <p>blog값</p>
+          </li>
+        </ul>
+      </div>
+      <img src="../static/team.png" />
+    </div>
+    <div class="vpost">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="id" placeholder="url" />
         <label for="floatingInput">닉네임</label>
-    </div>
-    <div class="form-floating">
-        <textarea class="form-control" placeholder="Leave a comment here" id="comment"
-          style="height: 100px"></textarea>
+      </div>
+      <div class="form-floating">
+        <textarea
+          class="form-control"
+          placeholder="Leave a comment here"
+          id="comment"
+          style="height: 100px"
+        ></textarea>
         <label for="floatingTextarea2">방명록을 남겨주세요!</label>
+      </div>
+      <div class="btn-text">
+        <button onclick="save_comment()" type="button" class="btn btn-dark">
+          방명록 남기기
+        </button>
+      </div>
     </div>
-    <div class="btn-text">
-        <button onclick="save_comment()" type="button" class="btn btn-dark">방명록 남기기</button>
-    </div>
-</div>
-<div class="vcards" id="visit-list">
-
-</div>
-
-</body>
+    <div class="vcards" id="visit-list"></div>
+  </body>
 </html>
