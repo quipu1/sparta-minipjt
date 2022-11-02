@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f3adabc1-086a-4d81-90ff-7095190a3b59" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/templates/member.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/member.html" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+>>>>>>> 78ff84d052234aa1872333664440eee86c426a32
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,10 +105,16 @@
       <workItem from="1667211685208" duration="139000" />
       <workItem from="1667234615867" duration="3898000" />
       <workItem from="1667238702113" duration="96000" />
+<<<<<<< HEAD
       <workItem from="1667263144097" duration="17971000" />
       <workItem from="1667298459164" duration="1747000" />
       <workItem from="1667301766930" duration="1028000" />
       <workItem from="1667347378511" duration="526000" />
+=======
+      <workItem from="1667263144097" duration="12010000" />
+      <workItem from="1667290040903" duration="33000" />
+      <workItem from="1667290093219" duration="6000" />
+>>>>>>> 78ff84d052234aa1872333664440eee86c426a32
     </task>
     <servers />
   </component>
