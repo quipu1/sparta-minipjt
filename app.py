@@ -3,7 +3,7 @@ from requests import get
 from pymongo import MongoClient
 
 app = Flask(__name__)
-client = MongoClient('mongodb+srv://test:test@cluster0.lrizo6r.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('')
 
 
 db = client.dblod
