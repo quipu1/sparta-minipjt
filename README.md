@@ -90,11 +90,12 @@ DB : MongoDB
 
 **[visited]** - 방명록 테이블
 
-|   field   | value |
-| :-------: | :---: |
-|    id     |  str  |
-|  comment  |  str  |
-| member_id |  int  |
+|   field    | value |
+| :--------: | :---: |
+|     id     |  str  |
+|  comment   |  str  |
+| member_id  |  int  |
+| comment_id |  int  |
 
 <br>
 
