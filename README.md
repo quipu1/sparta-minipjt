@@ -85,6 +85,7 @@ DB : MongoDB
 |   stpoint   |  str  |
 |    style    |  str  |
 |    blog     |  str  |
+|     img     |  str  |
 
 <br>
 
