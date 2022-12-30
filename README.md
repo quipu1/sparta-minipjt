@@ -111,5 +111,5 @@ DB : MongoDB
 
 <br>
 
-### 📌 프레임워크
+### 📌 와이어프레임
 ![img](https://lh4.googleusercontent.com/E5tFNHA__KQiUS6NVoe3X36JUWq_ZySeBD3aihLwpxm5DxBOse1Ss8TzdKuMkAFXeWjY9zXjmp5ilwU-fwrF2IzHwd4c2WAqVjaJO_5i_0urvJkhloJHUzVJ8s4i9sFLIPqajlxqyCVFD8p_Qr1GCJdzR3NZpVqukbzzQWa-0Hggd368633eBc_-)![img](https://lh6.googleusercontent.com/HKDc0z9jYbtwyq_SDxglGOFcw3vDoyN5FpS1wDoHcx8Z7YqDPrnGcnJ4IeHKlIrvrf15YuD6wIH6QqUEkgnRuteXcj2DiiLcDILV_XIB6Y8oxJ_9riIwTLDklxwgqksIjFObo0aLURI93f4AMV8AXm0fadaavRJrvHs7TiaI_kdlaPtpv4hhvap9)
